@@ -5,7 +5,7 @@ import {BiSun, BiMoon, BiCart} from 'react-icons/bi';
 import { Link } from "@reach/router";
 import { useCart } from "react-use-cart"; 
 
-const Header = () => {
+const Header = (onAdd) => {
     const {theme, setThemeMode} = useContext(ThemeContext);
     const [darkMode, setDarkMode] = useState(theme);
 
@@ -49,7 +49,7 @@ const Header = () => {
                 </Link>
                 
         
-            <Button>Add</Button>
+            <Button onClick={onAdd}>Add</Button>
             
         
            
