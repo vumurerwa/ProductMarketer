@@ -1,6 +1,7 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { useState } from "react";
+
 
 const AddProduct = ({ onAdd}) => {
     const [product, setProduct] = useState('')
@@ -20,28 +21,31 @@ const AddProduct = ({ onAdd}) => {
         setPrice('')
     }
     return (
-        <form style={{ marginTop: '4rem', width: '50%', marginLeft: '50%'}} className='add-form' onSubmit=
+        <Container style={{ backgroundColor: 'gray', width: '30%', height: '100vh'}}>
+        <form style={{ marginTop: '8rem', position: 'absolute', width: '40%', }} className='add-form' onSubmit=
         {onSubmit}>
-           <div className='form-control'>
-              <label>Product</label> 
+            <div style={{ fontSize: '30px',marginLeft: '4rem'}}><b>Add a Product</b></div>
+           <div style={{ padding: '1rem'}}>
+              <label><b>Product: </b></label> 
               <input type='text' placeholder='Add Product'
               value={product} onChange={(e) =>
               setProduct(e.target.value)}/>   
            </div>
-           <div className='form-control'>
-              <label>title</label> 
-              <input type='text' placeholder='Add title'
+           <div style={{ padding: '1rem'}}>
+              <label><b>Title: </b></label> 
+              <input style={{ marginLeft: '1.5rem'}} type='text' placeholder='Add title'
                value={title} onChange={(e) =>
                 setTitle(e.target.value)}/>   
            </div>
-           <div className='form-control'>
-              <label>price</label> 
-              <input type='text' placeholder='Add Price'
+           <div style={{ padding: '1rem'}}>
+              <label ><b>Price: </b></label> 
+              <input style={{ marginLeft: '1.2rem'}} type='text' placeholder='Add Price'
                value={price} onChange={(e) =>
                 setPrice(e.target.value)}/>   
            </div>
-           <Button>Add Product</Button>
+           <Button style={{ marginLeft: '6rem'}} onClick={()=>onAdd()} >Add Product</Button>
         </form>
+        </Container>
     )
 }
 

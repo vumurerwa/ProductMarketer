@@ -48,8 +48,12 @@ const Header = (onAdd) => {
                <span style={{ marginLeft: !isEmpty ? '-13px': 0}}>Cart</span>
                 </Link>
                 
-        
-            <Button onClick={onAdd}>Add</Button>
+             <Link to="/AddProduct"
+              >
+             
+             <Button style={{ marginLeft: '1rem'}}>Add New Product</Button>
+             </Link>
+            
             
         
            
